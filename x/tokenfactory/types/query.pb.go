@@ -6,7 +6,7 @@ package types
 import (
 	context "context"
 	fmt "fmt"
-	_ "github.com/cosmos/cosmos-sdk/types/query"
+	query "github.com/cosmos/cosmos-sdk/types/query"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -38,7 +38,7 @@ func (m *QueryParamsRequest) Reset()         { *m = QueryParamsRequest{} }
 func (m *QueryParamsRequest) String() string { return proto.CompactTextString(m) }
 func (*QueryParamsRequest) ProtoMessage()    {}
 func (*QueryParamsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_4629c9358726276b, []int{0}
+	return fileDescriptor_746fd26ddedfbac8, []int{0}
 }
 func (m *QueryParamsRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -77,7 +77,7 @@ func (m *QueryParamsResponse) Reset()         { *m = QueryParamsResponse{} }
 func (m *QueryParamsResponse) String() string { return proto.CompactTextString(m) }
 func (*QueryParamsResponse) ProtoMessage()    {}
 func (*QueryParamsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_4629c9358726276b, []int{1}
+	return fileDescriptor_746fd26ddedfbac8, []int{1}
 }
 func (m *QueryParamsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -113,33 +113,234 @@ func (m *QueryParamsResponse) GetParams() Params {
 	return Params{}
 }
 
-func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "bita.tokenfactory.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "bita.tokenfactory.QueryParamsResponse")
+type QueryGetDenomRequest struct {
+	Denom string `protobuf:"bytes,1,opt,name=denom,proto3" json:"denom,omitempty"`
 }
 
-func init() { proto.RegisterFile("bita/tokenfactory/query.proto", fileDescriptor_4629c9358726276b) }
+func (m *QueryGetDenomRequest) Reset()         { *m = QueryGetDenomRequest{} }
+func (m *QueryGetDenomRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetDenomRequest) ProtoMessage()    {}
+func (*QueryGetDenomRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_746fd26ddedfbac8, []int{2}
+}
+func (m *QueryGetDenomRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetDenomRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetDenomRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetDenomRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetDenomRequest.Merge(m, src)
+}
+func (m *QueryGetDenomRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetDenomRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetDenomRequest.DiscardUnknown(m)
+}
 
-var fileDescriptor_4629c9358726276b = []byte{
-	// 286 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x90, 0x31, 0x4e, 0xc3, 0x30,
-	0x14, 0x86, 0x63, 0x04, 0x19, 0xcc, 0x84, 0xe9, 0x40, 0x02, 0x18, 0x88, 0x04, 0x42, 0x0c, 0xb1,
-	0xda, 0x0e, 0xec, 0x3d, 0x00, 0x82, 0x8e, 0x6c, 0x4e, 0x65, 0xac, 0x08, 0xea, 0xe7, 0xc6, 0x2e,
-	0x22, 0x8c, 0x70, 0x01, 0x24, 0x2e, 0xd5, 0xb1, 0x12, 0x0b, 0x13, 0x42, 0x09, 0x07, 0x41, 0xb1,
-	0x33, 0x50, 0x05, 0xc4, 0x66, 0xbd, 0xff, 0xfb, 0x7e, 0xbd, 0x67, 0xbc, 0x9f, 0xe5, 0x96, 0x33,
-	0x0b, 0xb7, 0x42, 0xdd, 0xf0, 0x89, 0x85, 0xa2, 0x64, 0xb3, 0xb9, 0x28, 0xca, 0x54, 0x17, 0x60,
-	0x81, 0x6c, 0x35, 0x71, 0xfa, 0x33, 0x8e, 0x7b, 0x12, 0x24, 0xb8, 0x94, 0x35, 0x2f, 0x0f, 0xc6,
-	0x7b, 0x12, 0x40, 0xde, 0x09, 0xc6, 0x75, 0xce, 0xb8, 0x52, 0x60, 0xb9, 0xcd, 0x41, 0x99, 0x36,
-	0x3d, 0x9b, 0x80, 0x99, 0x82, 0x61, 0x19, 0x37, 0xc2, 0xf7, 0xb3, 0xfb, 0x7e, 0x26, 0x2c, 0xef,
-	0x33, 0xcd, 0x65, 0xae, 0x1c, 0xdc, 0xb2, 0xb4, 0xbb, 0x91, 0xe6, 0x05, 0x9f, 0xb6, 0x5d, 0x49,
-	0x0f, 0x93, 0xab, 0xa6, 0xe1, 0xd2, 0x0d, 0xc7, 0x62, 0x36, 0x17, 0xc6, 0x26, 0x17, 0x78, 0x7b,
-	0x65, 0x6a, 0x34, 0x28, 0x23, 0xc8, 0x39, 0x0e, 0xbd, 0xbc, 0x83, 0x0e, 0xd1, 0xe9, 0xe6, 0x20,
-	0x4a, 0x3b, 0x07, 0xa5, 0x5e, 0x19, 0xad, 0x2f, 0x3e, 0x0e, 0x82, 0x71, 0x8b, 0x0f, 0x9e, 0x11,
-	0xde, 0x70, 0x85, 0xe4, 0x11, 0x87, 0x9e, 0x20, 0xc7, 0xbf, 0xc8, 0xdd, 0x55, 0xe2, 0x93, 0xff,
-	0x30, 0xbf, 0x5b, 0x72, 0xf4, 0xf4, 0xf6, 0xf5, 0xba, 0xb6, 0x4b, 0x22, 0xf6, 0xd7, 0xc5, 0xa3,
-	0xe1, 0xa2, 0xa2, 0x68, 0x59, 0x51, 0xf4, 0x59, 0x51, 0xf4, 0x52, 0xd3, 0x60, 0x59, 0xd3, 0xe0,
-	0xbd, 0xa6, 0xc1, 0x75, 0xe4, 0x9c, 0x87, 0x55, 0xcb, 0x96, 0x5a, 0x98, 0x2c, 0x74, 0xff, 0x34,
-	0xfc, 0x0e, 0x00, 0x00, 0xff, 0xff, 0x90, 0xdf, 0xb5, 0xf3, 0xdb, 0x01, 0x00, 0x00,
+var xxx_messageInfo_QueryGetDenomRequest proto.InternalMessageInfo
+
+func (m *QueryGetDenomRequest) GetDenom() string {
+	if m != nil {
+		return m.Denom
+	}
+	return ""
+}
+
+type QueryGetDenomResponse struct {
+	Denom Denom `protobuf:"bytes,1,opt,name=denom,proto3" json:"denom"`
+}
+
+func (m *QueryGetDenomResponse) Reset()         { *m = QueryGetDenomResponse{} }
+func (m *QueryGetDenomResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetDenomResponse) ProtoMessage()    {}
+func (*QueryGetDenomResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_746fd26ddedfbac8, []int{3}
+}
+func (m *QueryGetDenomResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetDenomResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetDenomResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetDenomResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetDenomResponse.Merge(m, src)
+}
+func (m *QueryGetDenomResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetDenomResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetDenomResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetDenomResponse proto.InternalMessageInfo
+
+func (m *QueryGetDenomResponse) GetDenom() Denom {
+	if m != nil {
+		return m.Denom
+	}
+	return Denom{}
+}
+
+type QueryAllDenomRequest struct {
+	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllDenomRequest) Reset()         { *m = QueryAllDenomRequest{} }
+func (m *QueryAllDenomRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryAllDenomRequest) ProtoMessage()    {}
+func (*QueryAllDenomRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_746fd26ddedfbac8, []int{4}
+}
+func (m *QueryAllDenomRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllDenomRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllDenomRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllDenomRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllDenomRequest.Merge(m, src)
+}
+func (m *QueryAllDenomRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllDenomRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllDenomRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllDenomRequest proto.InternalMessageInfo
+
+func (m *QueryAllDenomRequest) GetPagination() *query.PageRequest {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
+type QueryAllDenomResponse struct {
+	Denom      []Denom             `protobuf:"bytes,1,rep,name=denom,proto3" json:"denom"`
+	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllDenomResponse) Reset()         { *m = QueryAllDenomResponse{} }
+func (m *QueryAllDenomResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryAllDenomResponse) ProtoMessage()    {}
+func (*QueryAllDenomResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_746fd26ddedfbac8, []int{5}
+}
+func (m *QueryAllDenomResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllDenomResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllDenomResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllDenomResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllDenomResponse.Merge(m, src)
+}
+func (m *QueryAllDenomResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllDenomResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllDenomResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllDenomResponse proto.InternalMessageInfo
+
+func (m *QueryAllDenomResponse) GetDenom() []Denom {
+	if m != nil {
+		return m.Denom
+	}
+	return nil
+}
+
+func (m *QueryAllDenomResponse) GetPagination() *query.PageResponse {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
+func init() {
+	proto.RegisterType((*QueryParamsRequest)(nil), "hey.tokenfactory.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "hey.tokenfactory.QueryParamsResponse")
+	proto.RegisterType((*QueryGetDenomRequest)(nil), "hey.tokenfactory.QueryGetDenomRequest")
+	proto.RegisterType((*QueryGetDenomResponse)(nil), "hey.tokenfactory.QueryGetDenomResponse")
+	proto.RegisterType((*QueryAllDenomRequest)(nil), "hey.tokenfactory.QueryAllDenomRequest")
+	proto.RegisterType((*QueryAllDenomResponse)(nil), "hey.tokenfactory.QueryAllDenomResponse")
+}
+
+func init() { proto.RegisterFile("hey/tokenfactory/query.proto", fileDescriptor_746fd26ddedfbac8) }
+
+var fileDescriptor_746fd26ddedfbac8 = []byte{
+	// 482 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x93, 0xcf, 0x6f, 0xd3, 0x30,
+	0x14, 0xc7, 0xeb, 0x8d, 0x56, 0xe0, 0x5d, 0x90, 0x29, 0x62, 0xaa, 0xb6, 0x6c, 0x8a, 0x68, 0x0b,
+	0x08, 0x6c, 0xad, 0x93, 0xb8, 0x6f, 0x20, 0x76, 0x01, 0x69, 0xe4, 0xc8, 0x01, 0xc9, 0x29, 0x26,
+	0x8d, 0x48, 0xe2, 0x2c, 0x76, 0x11, 0x11, 0xda, 0x65, 0x17, 0xae, 0x48, 0x68, 0xff, 0xd3, 0x8e,
+	0x93, 0xb8, 0x70, 0x42, 0xa8, 0xe5, 0x0f, 0x41, 0x79, 0x36, 0x6a, 0x7e, 0x28, 0x94, 0x53, 0x9b,
+	0xbc, 0xef, 0xfb, 0x7e, 0x3f, 0x7e, 0xcf, 0xc1, 0x3b, 0x33, 0x91, 0x33, 0x2d, 0x3f, 0x88, 0xe4,
+	0x3d, 0x9f, 0x6a, 0x99, 0xe5, 0xec, 0x6c, 0x2e, 0xb2, 0x9c, 0xa6, 0x99, 0xd4, 0x92, 0xdc, 0x9e,
+	0x89, 0x9c, 0x96, 0xab, 0x83, 0x7e, 0x20, 0x03, 0x09, 0x45, 0x56, 0xfc, 0x33, 0xba, 0xc1, 0x4e,
+	0x20, 0x65, 0x10, 0x09, 0xc6, 0xd3, 0x90, 0xf1, 0x24, 0x91, 0x9a, 0xeb, 0x50, 0x26, 0xca, 0x56,
+	0x1f, 0x4d, 0xa5, 0x8a, 0xa5, 0x62, 0x3e, 0x57, 0xc2, 0xd8, 0xb3, 0x8f, 0x07, 0xbe, 0xd0, 0xfc,
+	0x80, 0xa5, 0x3c, 0x08, 0x13, 0x10, 0x5b, 0xed, 0x6e, 0x83, 0x27, 0xe5, 0x19, 0x8f, 0xff, 0x5a,
+	0x35, 0x71, 0xdf, 0x89, 0x44, 0xc6, 0xa6, 0xea, 0xf6, 0x31, 0x79, 0x5d, 0xd8, 0x9f, 0x42, 0x8b,
+	0x27, 0xce, 0xe6, 0x42, 0x69, 0xf7, 0x15, 0xbe, 0x53, 0x79, 0xab, 0x52, 0x99, 0x28, 0x41, 0x9e,
+	0xe2, 0x9e, 0xb1, 0xde, 0x46, 0xfb, 0xe8, 0xc1, 0xd6, 0x64, 0x9b, 0xd6, 0x0f, 0x4b, 0x4d, 0xc7,
+	0xf1, 0x8d, 0xab, 0x9f, 0x7b, 0x1d, 0xcf, 0xaa, 0xdd, 0xc7, 0xb8, 0x0f, 0x76, 0x27, 0x42, 0x3f,
+	0x2f, 0xb2, 0x6d, 0x0c, 0xe9, 0xe3, 0x2e, 0xb0, 0x80, 0xdd, 0x2d, 0xcf, 0x3c, 0xb8, 0x2f, 0xf1,
+	0xdd, 0x9a, 0xda, 0xc6, 0x1f, 0x96, 0xe5, 0x5b, 0x93, 0x7b, 0xcd, 0x74, 0xd0, 0xdb, 0x70, 0xeb,
+	0xf6, 0xd6, 0x66, 0x1f, 0x45, 0x51, 0x25, 0xfb, 0x05, 0xc6, 0xab, 0x49, 0x5a, 0xc7, 0x11, 0x35,
+	0x63, 0xa7, 0xc5, 0xd8, 0xa9, 0xd9, 0xaa, 0x1d, 0x3b, 0x3d, 0xe5, 0x81, 0xb0, 0xbd, 0x5e, 0xa9,
+	0xd3, 0xbd, 0x44, 0x16, 0x77, 0x15, 0xd0, 0xc4, 0xdd, 0xfc, 0x5f, 0x5c, 0x72, 0x52, 0xc1, 0xda,
+	0x00, 0xac, 0xf1, 0x5a, 0x2c, 0x93, 0x58, 0xe6, 0x9a, 0x5c, 0x6e, 0xe2, 0x2e, 0x70, 0x91, 0x73,
+	0xdc, 0x33, 0x5b, 0x21, 0xf7, 0x9b, 0x08, 0xcd, 0xe5, 0x0f, 0x86, 0x6b, 0x54, 0x26, 0xcc, 0x1d,
+	0x5d, 0x7c, 0xff, 0xfd, 0x6d, 0x63, 0x9f, 0x38, 0x8c, 0xfb, 0x3e, 0x57, 0xac, 0xe5, 0x16, 0x92,
+	0x2f, 0x08, 0x77, 0xe1, 0xa0, 0x64, 0xd4, 0x62, 0x5c, 0xbb, 0x16, 0x83, 0xf1, 0x5a, 0x9d, 0x45,
+	0x78, 0x02, 0x08, 0x63, 0x32, 0x6c, 0x43, 0x80, 0x99, 0xb2, 0xcf, 0xf0, 0x73, 0x4e, 0x2e, 0x10,
+	0xbe, 0x09, 0x06, 0x47, 0x51, 0xd4, 0x0a, 0x53, 0xbb, 0x27, 0xad, 0x30, 0xf5, 0x75, 0xbb, 0x43,
+	0x80, 0xd9, 0x23, 0xbb, 0xff, 0x84, 0x39, 0x7e, 0x76, 0xb5, 0x70, 0xd0, 0xf5, 0xc2, 0x41, 0xbf,
+	0x16, 0x0e, 0xfa, 0xba, 0x74, 0x3a, 0xd7, 0x4b, 0xa7, 0xf3, 0x63, 0xe9, 0x74, 0xde, 0x3c, 0x0c,
+	0x42, 0x3d, 0x9b, 0xfb, 0x74, 0x2a, 0xe3, 0x92, 0xc5, 0xa7, 0xaa, 0x89, 0xce, 0x53, 0xa1, 0xfc,
+	0x1e, 0x7c, 0xbc, 0x87, 0x7f, 0x02, 0x00, 0x00, 0xff, 0xff, 0x87, 0xf7, 0x39, 0xe5, 0x8b, 0x04,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -156,6 +357,9 @@ const _ = grpc.SupportPackageIsVersion4
 type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	// Queries a list of Denom items.
+	Denom(ctx context.Context, in *QueryGetDenomRequest, opts ...grpc.CallOption) (*QueryGetDenomResponse, error)
+	DenomAll(ctx context.Context, in *QueryAllDenomRequest, opts ...grpc.CallOption) (*QueryAllDenomResponse, error)
 }
 
 type queryClient struct {
@@ -168,7 +372,25 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/bita.tokenfactory.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/hey.tokenfactory.Query/Params", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Denom(ctx context.Context, in *QueryGetDenomRequest, opts ...grpc.CallOption) (*QueryGetDenomResponse, error) {
+	out := new(QueryGetDenomResponse)
+	err := c.cc.Invoke(ctx, "/hey.tokenfactory.Query/Denom", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) DenomAll(ctx context.Context, in *QueryAllDenomRequest, opts ...grpc.CallOption) (*QueryAllDenomResponse, error) {
+	out := new(QueryAllDenomResponse)
+	err := c.cc.Invoke(ctx, "/hey.tokenfactory.Query/DenomAll", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -179,6 +401,9 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	// Queries a list of Denom items.
+	Denom(context.Context, *QueryGetDenomRequest) (*QueryGetDenomResponse, error)
+	DenomAll(context.Context, *QueryAllDenomRequest) (*QueryAllDenomResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -187,6 +412,12 @@ type UnimplementedQueryServer struct {
 
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (*UnimplementedQueryServer) Denom(ctx context.Context, req *QueryGetDenomRequest) (*QueryGetDenomResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Denom not implemented")
+}
+func (*UnimplementedQueryServer) DenomAll(ctx context.Context, req *QueryAllDenomRequest) (*QueryAllDenomResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DenomAll not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -203,7 +434,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bita.tokenfactory.Query/Params",
+		FullMethod: "/hey.tokenfactory.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -211,17 +442,61 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_Denom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetDenomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Denom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/hey.tokenfactory.Query/Denom",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Denom(ctx, req.(*QueryGetDenomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_DenomAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllDenomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).DenomAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/hey.tokenfactory.Query/DenomAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).DenomAll(ctx, req.(*QueryAllDenomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "bita.tokenfactory.Query",
+	ServiceName: "hey.tokenfactory.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
 		},
+		{
+			MethodName: "Denom",
+			Handler:    _Query_Denom_Handler,
+		},
+		{
+			MethodName: "DenomAll",
+			Handler:    _Query_DenomAll_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "bita/tokenfactory/query.proto",
+	Metadata: "hey/tokenfactory/query.proto",
 }
 
 func (m *QueryParamsRequest) Marshal() (dAtA []byte, err error) {
@@ -280,6 +555,153 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryGetDenomRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetDenomRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetDenomRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Denom) > 0 {
+		i -= len(m.Denom)
+		copy(dAtA[i:], m.Denom)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Denom)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetDenomResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetDenomResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetDenomResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Denom.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintQuery(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllDenomRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllDenomRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllDenomRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllDenomResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllDenomResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllDenomResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Denom) > 0 {
+		for iNdEx := len(m.Denom) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Denom[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -308,6 +730,62 @@ func (m *QueryParamsResponse) Size() (n int) {
 	_ = l
 	l = m.Params.Size()
 	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryGetDenomRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Denom)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryGetDenomResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.Denom.Size()
+	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryAllDenomRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryAllDenomResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Denom) > 0 {
+		for _, e := range m.Denom {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
 	return n
 }
 
@@ -426,6 +904,377 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if err := m.Params.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetDenomRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetDenomRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetDenomRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Denom", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Denom = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetDenomResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetDenomResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetDenomResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Denom", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Denom.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllDenomRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllDenomRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllDenomRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageRequest{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllDenomResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllDenomResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllDenomResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Denom", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Denom = append(m.Denom, Denom{})
+			if err := m.Denom[len(m.Denom)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageResponse{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
