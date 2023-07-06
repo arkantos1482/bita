@@ -1,0 +1,7 @@
+syntax = "proto3";
+package bita.tokenfactory;
+
+option go_package = "bita/x/tokenfactory/types";
+
+// Msg defines the Msg service.
+service Msg {}
