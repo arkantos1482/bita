@@ -2,6 +2,7 @@ package network
 
 import (
 	"fmt"
+	"github.com/CosmWasm/wasmd/x/wasm"
 	"testing"
 	"time"
 
@@ -13,7 +14,6 @@ import (
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	pruningtypes "github.com/cosmos/cosmos-sdk/store/pruning/types"
 	"github.com/cosmos/cosmos-sdk/testutil/network"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/stretchr/testify/require"
@@ -60,16 +60,19 @@ func DefaultConfig() network.Config {
 		InterfaceRegistry: encoding.InterfaceRegistry,
 		AccountRetriever:  authtypes.AccountRetriever{},
 		AppConstructor: func(val network.ValidatorI) servertypes.Application {
+			var wasmOpts []wasm.Option
+
 			return app.New(
 				val.GetCtx().Logger,
 				tmdb.NewMemDB(),
 				nil,
 				true,
-				map[int64]bool{},
-				val.GetCtx().Config.RootDir,
-				0,
-				encoding,
-				simtestutil.EmptyAppOptions{},
+				app.GetEnabledProposals(),
+
+				//appOpts,
+				nil,
+
+				wasmOpts,
 				baseapp.SetPruning(pruningtypes.NewPruningOptionsFromString(val.GetAppConfig().Pruning)),
 				baseapp.SetMinGasPrices(val.GetAppConfig().MinGasPrices),
 				baseapp.SetChainID(chainID),
