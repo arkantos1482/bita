@@ -9,7 +9,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 )
 
 type (

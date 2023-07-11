@@ -4,9 +4,9 @@ import (
 	"math/rand"
 	"strconv"
 
-	"bita/x/tokenfactory/keeper"
-	"bita/x/tokenfactory/types"
 	simappparams "cosmossdk.io/simapp/params"
+	"github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"

@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

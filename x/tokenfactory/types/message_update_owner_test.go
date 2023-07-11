@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"bita/testutil/sample"
+	"github.com/arkantos1482/bita/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 )

@@ -8,9 +8,9 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
-	keepertest "bita/testutil/keeper"
-	"bita/x/tokenfactory/keeper"
-	"bita/x/tokenfactory/types"
+	keepertest "github.com/arkantos1482/bita/testutil/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 )
 
 // Prevent strconv unused error

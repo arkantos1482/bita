@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

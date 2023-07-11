@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"bita/app"
-	"bita/cmd/bitad/cmd"
+	"github.com/arkantos1482/bita/app"
+	"github.com/arkantos1482/bita/cmd/bitad/cmd"
 )
 
 func main() {

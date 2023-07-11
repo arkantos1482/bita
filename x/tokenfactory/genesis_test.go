@@ -3,10 +3,10 @@ package tokenfactory_test
 import (
 	"testing"
 
-	keepertest "bita/testutil/keeper"
-	"bita/testutil/nullify"
-	"bita/x/tokenfactory"
-	"bita/x/tokenfactory/types"
+	keepertest "github.com/arkantos1482/bita/testutil/keeper"
+	"github.com/arkantos1482/bita/testutil/nullify"
+	"github.com/arkantos1482/bita/x/tokenfactory"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/stretchr/testify/require"
 )
 

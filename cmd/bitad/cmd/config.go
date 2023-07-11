@@ -4,7 +4,7 @@ import (
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"bita/app"
+	"github.com/arkantos1482/bita/app"
 )
 
 func initSDKConfig() {

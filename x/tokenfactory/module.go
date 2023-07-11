@@ -11,9 +11,9 @@ import (
 
 	abci "github.com/cometbft/cometbft/abci/types"
 
-	"bita/x/tokenfactory/client/cli"
-	"bita/x/tokenfactory/keeper"
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/client/cli"
+	"github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"

@@ -3,7 +3,7 @@ package app
 import (
 	"github.com/cosmos/cosmos-sdk/std"
 
-	"bita/app/params"
+	"github.com/arkantos1482/bita/app/params"
 )
 
 // MakeEncodingConfig creates a new EncodingConfig with all modules registered

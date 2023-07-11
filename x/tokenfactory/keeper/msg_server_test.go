@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	keepertest "bita/testutil/keeper"
-	"bita/x/tokenfactory/keeper"
-	"bita/x/tokenfactory/types"
+	keepertest "github.com/arkantos1482/bita/testutil/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

@@ -4,7 +4,7 @@ import (
 	"context"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

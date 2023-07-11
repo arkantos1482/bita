@@ -18,7 +18,7 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/stretchr/testify/require"
 
-	"bita/app"
+	"github.com/arkantos1482/bita/app"
 )
 
 type (

@@ -127,9 +127,9 @@ import (
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 
-	tokenfactorymodule "bita/x/tokenfactory"
-	tokenfactorymodulekeeper "bita/x/tokenfactory/keeper"
-	tokenfactorymoduletypes "bita/x/tokenfactory/types"
+	tokenfactorymodule "github.com/arkantos1482/bita/x/tokenfactory"
+	tokenfactorymodulekeeper "github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	tokenfactorymoduletypes "github.com/arkantos1482/bita/x/tokenfactory/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 

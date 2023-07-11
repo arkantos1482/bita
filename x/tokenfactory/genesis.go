@@ -1,8 +1,8 @@
 package tokenfactory
 
 import (
-	"bita/x/tokenfactory/keeper"
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/x/tokenfactory/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

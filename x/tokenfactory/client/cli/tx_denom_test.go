@@ -12,8 +12,8 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
-	"bita/testutil/network"
-	"bita/x/tokenfactory/client/cli"
+	"github.com/arkantos1482/bita/testutil/network"
+	"github.com/arkantos1482/bita/x/tokenfactory/client/cli"
 )
 
 // Prevent strconv unused error

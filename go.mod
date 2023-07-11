@@ -1,4 +1,4 @@
-module bita
+module github.com/arkantos1482/bita
 
 go 1.19
 

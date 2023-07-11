@@ -12,10 +12,10 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"bita/testutil/network"
-	"bita/testutil/nullify"
-	"bita/x/tokenfactory/client/cli"
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/testutil/network"
+	"github.com/arkantos1482/bita/testutil/nullify"
+	"github.com/arkantos1482/bita/x/tokenfactory/client/cli"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 )
 
 // Prevent strconv unused error

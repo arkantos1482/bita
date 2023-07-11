@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "bita/testutil/keeper"
-	"bita/x/tokenfactory/types"
+	testkeeper "github.com/arkantos1482/bita/testutil/keeper"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/stretchr/testify/require"
 )
 

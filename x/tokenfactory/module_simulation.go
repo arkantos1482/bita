@@ -3,9 +3,9 @@ package tokenfactory
 import (
 	"math/rand"
 
-	"bita/testutil/sample"
-	tokenfactorysimulation "bita/x/tokenfactory/simulation"
-	"bita/x/tokenfactory/types"
+	"github.com/arkantos1482/bita/testutil/sample"
+	tokenfactorysimulation "github.com/arkantos1482/bita/x/tokenfactory/simulation"
+	"github.com/arkantos1482/bita/x/tokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
